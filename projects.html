@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects - Robby's Portfolio</title>
 
+    <script>
+      (function () {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/projects.css" />
 
@@ -22,6 +30,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script src="js/app.js"></script>
   </head>
   <body>
     <header class="navbar-container">
@@ -41,9 +51,19 @@
       <section class="page-section">
         <h1 class="page-title">Projects</h1>
 
+        <!-- Filter Tab Bar -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="analytics">Analytics</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+          <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+          <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+        </div>
+
         <div class="projects-grid">
 
-          <div class="project-card" onclick="openModal('modal-1')">
+          <div class="project-card" data-tags="analytics python" onclick="openModal('modal-1')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Scraping from Google Play Store</h2>
@@ -55,7 +75,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-2')">
+          <div class="project-card" data-tags="analytics python machine-learning data-analysis" onclick="openModal('modal-2')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Sentiment Analytics</h2>
@@ -69,7 +89,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-3')">
+          <div class="project-card" data-tags="analytics python machine-learning data-analysis" onclick="openModal('modal-3')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Image Classification</h2>
@@ -83,7 +103,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-4')">
+          <div class="project-card" data-tags="analytics python google-sheets data-analysis" onclick="openModal('modal-4')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Market Platform Analysis</h2>
@@ -97,7 +117,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-5')">
+          <div class="project-card" data-tags="analytics big-query google-sheets data-analysis" onclick="openModal('modal-5')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">E-Commerce Analysis</h2>
@@ -124,7 +144,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-7')">
+          <div class="project-card" data-tags="dashboard python metabase data-analysis" onclick="openModal('modal-7')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Gaming Session Dashboard</h2>
@@ -138,7 +158,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-8')">
+          <div class="project-card" data-tags="dashboard python big-query looker-studio data-analysis" onclick="openModal('modal-8')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">E-Commerce Dashboard</h2>
@@ -153,7 +173,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-9')">
+          <div class="project-card" data-tags="dashboard google-sheets tableau data-analysis" onclick="openModal('modal-9')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">IDX Big4 Indonesian Bank Dashboard</h2>
@@ -167,7 +187,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-9')">
+          <div class="project-card" data-tags="dashboard google-sheets power-bi data-analysis" onclick="openModal('modal-9')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Covid-19 Dashboard</h2>
@@ -181,7 +201,7 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('modal-10')">
+          <div class="project-card" data-tags="dashboard python google-sheets looker-studio data-analysis" onclick="openModal('modal-10')">
             <div class="project-card-header">
               <i class="fas fa-folder"></i>
               <h2 class="project-title">Market Platform Monitoring Dashboard</h2>
@@ -216,6 +236,10 @@
       </aside>
     </main>
 
+    <!-- Floating Buttons -->
+    <button id="dark-mode-btn" title="Toggle Dark Mode"></button>
+    <button id="back-to-top-btn" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+
     <!-- Modals -->
     <div id="modal-1" class="modal-overlay" onclick="closeModalOnOverlay(event)">
       <div class="modal-box">
@@ -231,6 +255,8 @@
           <li>Data cleaning and preprocessing</li>
           <li>Exported structured data for downstream analytics</li>
         </ul>
+        <!-- Add external link below if available, otherwise remove this line -->
+        <!-- <a href="https://your-link-here.com" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> View Project</a> -->
       </div>
     </div>
 
@@ -250,6 +276,8 @@
           <li>Machine learning classification model</li>
           <li>Visualization of sentiment trends over time</li>
         </ul>
+        <!-- Add external link below if available, otherwise remove this line -->
+        <!-- <a href="https://your-link-here.com" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> View Dashboard</a> -->
       </div>
     </div>
 
@@ -269,6 +297,8 @@
           <li>Convolutional Neural Network (CNN) model training</li>
           <li>Model evaluation and prediction pipeline</li>
         </ul>
+        <!-- Add external link below if available, otherwise remove this line -->
+        <!-- <a href="https://your-link-here.com" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> View Project</a> -->
       </div>
     </div>
 
@@ -288,6 +318,8 @@
           <li>Sales and customer segmentation analysis</li>
           <li>Interactive dashboard in Google Sheets</li>
         </ul>
+        <!-- Add external link below if available, otherwise remove this line -->
+        <!-- <a href="https://your-link-here.com" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> View Dashboard</a> -->
       </div>
     </div>
 

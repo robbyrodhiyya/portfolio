@@ -1,3 +1,35 @@
+/* ── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-nav: #ffffff;
+  --border: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #2d3e50;
+  --accent-mid: #425c77;
+  --accent-light: #89b0d9;
+  --nav-link: #000000;
+  --shadow: rgba(45, 62, 80, 0.15);
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-nav: #0f172a;
+  --border: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #89b0d9;
+  --accent-mid: #7096b5;
+  --accent-light: #bfd4ea;
+  --nav-link: #f1f5f9;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ── Reset ────────────────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -6,24 +38,24 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-
+  background-color: var(--bg);
+  color: var(--text-primary);
   height: 100vh;
   margin: 0;
-
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ── Navbar ───────────────────────────────────────────────────────────────── */
 header.navbar-container {
   width: 100%;
   max-width: 1200px;
   padding-block: 1rem;
   margin-inline: auto;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   z-index: 9999;
 }
 
@@ -33,7 +65,6 @@ header.navbar-container .logo img {
 
 header.navbar-container .nav-list ul {
   padding-left: 0;
-
   display: flex;
   justify-content: center;
   gap: 2rem 1rem;
@@ -46,36 +77,32 @@ header.navbar-container .nav-list li {
 header.navbar-container .nav-list li a {
   padding: 0.5rem 1.5rem;
   border-radius: 999px;
-
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
-  color: black;
-
+  color: var(--nav-link);
   transition: all 0.2s ease-in-out;
 }
 
 header.navbar-container .nav-list li a.active,
 header.navbar-container .nav-list li:hover a {
-  background-color: #425c77;
+  background-color: var(--accent-mid);
   color: white;
 }
 
+/* ── Main ─────────────────────────────────────────────────────────────────── */
 main {
   flex: 1;
-
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
   padding: 2rem 4rem;
-
   display: flex;
   align-items: center;
 }
 
 main .content {
   flex: 1;
-
   display: flex;
   align-items: center;
 }
@@ -86,13 +113,14 @@ main .content .content-description {
 
 main .content .content-description .title {
   margin-block: 1rem;
-
   font-size: 3.5rem;
+  color: var(--text-primary);
 }
 
 main .content .content-description p {
   font-size: 1.2rem;
   line-height: 1.7rem;
+  color: var(--text-secondary);
 }
 
 main .content .content-description button {
@@ -100,29 +128,24 @@ main .content .content-description button {
   border: 3px solid transparent;
   border-radius: 999px;
   margin-block-start: 1rem;
-
-  background-color: #2d3e50;
-
+  background-color: var(--accent);
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 700;
   color: white;
-
   cursor: pointer;
   transition: all 0.15s ease-in;
 }
 
 main .content .content-description button:hover {
-  border: 3px solid #2d3e50;
+  border: 3px solid var(--accent);
   background-color: transparent;
-
-  color: #2d3e50;
+  color: var(--accent);
 }
 
 main .content .content-image {
   flex: 1;
-
   display: flex;
 }
 
@@ -132,6 +155,7 @@ main .content .content-image img {
   margin: auto;
 }
 
+/* ── Social aside ─────────────────────────────────────────────────────────── */
 main aside {
   position: fixed;
   inset-block: 0;
@@ -149,7 +173,6 @@ main aside .social-media ul {
   border-bottom-left-radius: 12px;
   margin: auto;
   background-color: #2d3e50;
-
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -165,7 +188,6 @@ main aside .social-media li a {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
-
   transition: all 0.1s ease-in-out;
 }
 
@@ -173,7 +195,7 @@ main aside .social-media li a:hover {
   color: #89b0d9;
 }
 
-/* Shared page layout for inner pages */
+/* ── Inner page layout ────────────────────────────────────────────────────── */
 main.page-main {
   align-items: flex-start;
 }
@@ -187,10 +209,10 @@ main.page-main {
   font-size: 2.5rem;
   font-weight: 700;
   margin-block: 0 2rem;
-  color: #2d3e50;
+  color: var(--text-primary);
 }
 
-/* Shared tag styles */
+/* ── Shared tag styles ────────────────────────────────────────────────────── */
 .tag {
   display: inline-block;
   padding: 0.2rem 0.75rem;
@@ -212,7 +234,72 @@ main.page-main {
 .tag-tableau      { background-color: #ffedd5; color: #9a3412; }
 .tag-powerbi      { background-color: #fef9c3; color: #854d0e; }
 
-/* Medium devices (768px and below) */
+[data-theme="dark"] .tag-analytics    { background-color: #1e3a8a; color: #bfdbfe; }
+[data-theme="dark"] .tag-python       { background-color: #451a03; color: #fcd34d; }
+[data-theme="dark"] .tag-ml           { background-color: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .tag-da           { background-color: #2e1065; color: #ddd6fe; }
+[data-theme="dark"] .tag-de           { background-color: #1e293b; color: #cbd5e1; }
+[data-theme="dark"] .tag-sheets       { background-color: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .tag-bigquery     { background-color: #082f49; color: #7dd3fc; }
+[data-theme="dark"] .tag-dashboard    { background-color: #500724; color: #fbcfe8; }
+[data-theme="dark"] .tag-metabase     { background-color: #1e1b4b; color: #c7d2fe; }
+[data-theme="dark"] .tag-lookerstudio { background-color: #1e1b4b; color: #c7d2fe; }
+[data-theme="dark"] .tag-tableau      { background-color: #431407; color: #fed7aa; }
+[data-theme="dark"] .tag-powerbi      { background-color: #422006; color: #fef08a; }
+
+
+/* ── Floating Buttons (Dark Mode + Back to Top) ──────────────────────────── */
+#dark-mode-btn,
+#back-to-top-btn {
+  position: fixed;
+  z-index: 10001;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+#dark-mode-btn {
+  bottom: 5rem;
+  left: 1.5rem;
+  background-color: var(--accent);
+  color: white;
+}
+
+#dark-mode-btn:hover {
+  background-color: var(--accent-mid);
+  transform: scale(1.08);
+}
+
+#back-to-top-btn {
+  bottom: 5rem;
+  right: 1.5rem;
+  background-color: var(--accent);
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+#back-to-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#back-to-top-btn:hover {
+  background-color: var(--accent-mid);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
 @media screen and (max-width: 768px) {
   header.navbar-container {
     flex-direction: column;

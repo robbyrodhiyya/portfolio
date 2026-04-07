@@ -4,19 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Robby's Portfolio</title>
- 
-    <!-- My Own CSS -->
+
+    <script>
+      (function () {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="css/app.css" />
- 
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
       rel="stylesheet"
     />
- 
-    <!-- Font Awesome 5.15.4 -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -24,12 +29,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script src="js/app.js"></script>
   </head>
   <body>
     <header class="navbar-container">
-      <div class="logo">
-        <!-- <img src="img/robby-header-logo.png" alt="Robby Logo" /> -->
-      </div>
+      <div class="logo"></div>
       <nav class="nav-list">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -40,26 +45,26 @@
         </ul>
       </nav>
     </header>
- 
+
     <main>
       <section id="home" class="content">
         <div class="content-description">
           <h1 class="title">Hello, I'm Robby</h1>
           <p>
-            I’m an experienced <b>Data Analyst</b> passionate about driving product growth. <br>
+            I'm an experienced <b>Data Analyst</b> passionate about driving product growth. <br>
             I specialize in A/B testing and campaign optimization, leveraging <b>Python, SQL, and Airflow</b> to build automated, data-driven solutions. <br>
-            Currently, I’m exploring the potential of Machine Learning to create innovative product features.
+            Currently, I'm exploring the potential of Machine Learning to create innovative product features.
           </p>
           <a href="projects.html">
             <button>View Projects</button>
           </a>
         </div>
- 
+
         <div class="content-image">
           <img src="img/pp-remove-bg.png" alt="Robby R." />
         </div>
       </section>
- 
+
       <aside>
         <div class="social-media">
           <ul>
@@ -87,5 +92,9 @@
         </div>
       </aside>
     </main>
+
+    <!-- Floating Buttons -->
+    <button id="dark-mode-btn" title="Toggle Dark Mode"></button>
+    <button id="back-to-top-btn" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
   </body>
 </html>

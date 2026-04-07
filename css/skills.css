@@ -5,10 +5,10 @@
 .skills-category-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #425c77;
+  color: var(--accent-mid);
   margin-block: 0 1rem;
   padding-block-end: 0.5rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border);
 }
 
 .skills-grid {
@@ -18,8 +18,8 @@
 }
 
 .skill-card {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1rem 1.25rem;
 
@@ -29,7 +29,7 @@
 
   font-size: 1rem;
   font-weight: 500;
-  color: #1e293b;
+  color: var(--text-primary);
 
   cursor: default;
   transition: all 0.2s ease-in-out;
@@ -40,12 +40,12 @@
   border-color: #2d3e50;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(45, 62, 80, 0.15);
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
 .skill-card i {
   font-size: 1.1rem;
-  color: #425c77;
+  color: var(--accent-mid);
   transition: color 0.2s ease-in-out;
 }
 
