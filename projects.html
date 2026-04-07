@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Robby's Portfolio</title>
+
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="navbar-container">
+      <div class="logo"></div>
+      <nav class="nav-list">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-section">
+        <h1 class="page-title">Projects</h1>
+
+        <div class="projects-grid">
+
+          <div class="project-card" onclick="openModal('modal-1')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Scraping from Google Play Store</h2>
+            </div>
+            <p class="project-summary">Scraping Wondr by BNI review from Google Play Store</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-python">Python</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-2')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Sentiment Analytics</h2>
+            </div>
+            <p class="project-summary">Sentiment Analysis based on scraping results from Wondr by BNI app</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-ml">Machine Learning</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-3')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Image Classification</h2>
+            </div>
+            <p class="project-summary">Classified Food and Beverage images and created prediction model</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-ml">Machine Learning</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-4')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Market Platform Analysis</h2>
+            </div>
+            <p class="project-summary">Analyze e-commerce data to extract business insights</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-sheets">Google Sheets</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-5')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">E-Commerce Analysis</h2>
+            </div>
+            <p class="project-summary">Analyze e-commerce data to extract business insights</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-bigquery">Big Query</span>
+              <span class="tag tag-sheets">Google Sheets</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-6')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Air Quality Analysis</h2>
+            </div>
+            <p class="project-summary">Analyze Air Quality data to extract insights</p>
+            <div class="project-tags">
+              <span class="tag tag-analytics">Analytics</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-7')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Gaming Session Dashboard</h2>
+            </div>
+            <p class="project-summary">Monitoring dashboard for gaming session</p>
+            <div class="project-tags">
+              <span class="tag tag-dashboard">Dashboard</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-metabase">Metabase</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-8')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">E-Commerce Dashboard</h2>
+            </div>
+            <p class="project-summary">Monitoring dashboard from E-Commerce data analysis</p>
+            <div class="project-tags">
+              <span class="tag tag-dashboard">Dashboard</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-bigquery">Big Query</span>
+              <span class="tag tag-lookerstudio">Looker Studio</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-9')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">IDX Big4 Indonesian Bank Dashboard</h2>
+            </div>
+            <p class="project-summary">Dashboard stock trend from Big4 Indonesian Bank</p>
+            <div class="project-tags">
+              <span class="tag tag-dashboard">Dashboard</span>
+              <span class="tag tag-sheets">Google Sheets</span>
+              <span class="tag tag-tableau">Tableau</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-9')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Covid-19 Dashboard</h2>
+            </div>
+            <p class="project-summary">Trend dashboard of Covid-19</p>
+            <div class="project-tags">
+              <span class="tag tag-dashboard">Dashboard</span>
+              <span class="tag tag-sheets">Google Sheets</span>
+              <span class="tag tag-powerbi">Power BI</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="openModal('modal-10')">
+            <div class="project-card-header">
+              <i class="fas fa-folder"></i>
+              <h2 class="project-title">Market Platform Monitoring Dashboard</h2>
+            </div>
+            <p class="project-summary">Monitoring dashboard from E-Commerce Market data analysis</p>
+            <div class="project-tags">
+              <span class="tag tag-dashboard">Dashboard</span>
+              <span class="tag tag-python">Python</span>
+              <span class="tag tag-sheets">Google Sheets</span>
+              <span class="tag tag-lookerstudio">Looker Studio</span>
+              <span class="tag tag-da">Data Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <aside>
+        <div class="social-media">
+          <ul>
+            <li>
+              <a href="https://id.linkedin.com/in/robbyrodhiyya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/robbyrodhiyya" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com/robbyrodhiyya" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal-1" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+        <h2>Scraping from Google Play Store</h2>
+        <div class="modal-tags">
+          <span class="tag tag-analytics">Analytics</span>
+          <span class="tag tag-python">Python</span>
+        </div>
+        <p>This project involves scraping user reviews of the Wondr by BNI application from the Google Play Store. The scraped data is used for further analysis such as sentiment analysis and user feedback categorization.</p>
+        <ul>
+          <li>Automated scraping pipeline using Python</li>
+          <li>Data cleaning and preprocessing</li>
+          <li>Exported structured data for downstream analytics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-2" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+        <h2>Sentiment Analytics</h2>
+        <div class="modal-tags">
+          <span class="tag tag-analytics">Analytics</span>
+          <span class="tag tag-python">Python</span>
+          <span class="tag tag-ml">Machine Learning</span>
+          <span class="tag tag-da">Data Analysis</span>
+        </div>
+        <p>Built a sentiment analysis model on top of scraped Google Play Store reviews from the Wondr by BNI app. The model classifies user reviews as positive, negative, or neutral to help product teams understand user feedback at scale.</p>
+        <ul>
+          <li>Text preprocessing and tokenization</li>
+          <li>Machine learning classification model</li>
+          <li>Visualization of sentiment trends over time</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-3" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+        <h2>Image Classification</h2>
+        <div class="modal-tags">
+          <span class="tag tag-analytics">Analytics</span>
+          <span class="tag tag-python">Python</span>
+          <span class="tag tag-ml">Machine Learning</span>
+          <span class="tag tag-da">Data Analysis</span>
+        </div>
+        <p>Developed an image classification model to identify and categorize Food and Beverage images. The model can predict the category of an input image with high accuracy using deep learning techniques.</p>
+        <ul>
+          <li>Dataset collection and augmentation</li>
+          <li>Convolutional Neural Network (CNN) model training</li>
+          <li>Model evaluation and prediction pipeline</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-4" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+        <h2>Market Platform Analysis</h2>
+        <div class="modal-tags">
+          <span class="tag tag-analytics">Analytics</span>
+          <span class="tag tag-python">Python</span>
+          <span class="tag tag-sheets">Google Sheets</span>
+          <span class="tag tag-da">Data Analysis</span>
+        </div>
+        <p>Analyzed e-commerce data from a market platform to uncover sales trends, customer behavior, and product performance insights. Results were presented through interactive Google Sheets dashboards.</p>
+        <ul>
+          <li>Exploratory Data Analysis (EDA) with Python</li>
+          <li>Sales and customer segmentation analysis</li>
+          <li>Interactive dashboard in Google Sheets</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      function closeModalOnOverlay(event) {
+        if (event.target === event.currentTarget) {
+          event.currentTarget.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    </script>
+  </body>
+</html>
