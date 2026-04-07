@@ -1,0 +1,70 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2d3e50;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.experience-card:hover {
+  box-shadow: 0 6px 24px rgba(45, 62, 80, 0.1);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block-end: 0.75rem;
+  gap: 1rem;
+}
+
+.experience-job-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d3e50;
+  margin: 0 0 0.25rem;
+}
+
+.experience-company {
+  font-size: 0.95rem;
+  color: #425c77;
+  font-weight: 500;
+}
+
+.experience-period {
+  font-size: 0.85rem;
+  color: #64748b;
+  white-space: nowrap;
+  font-weight: 500;
+  background-color: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.experience-summary {
+  font-size: 0.95rem;
+  line-height: 1.65rem;
+  color: #334155;
+  margin-block-end: 1rem;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+  }
+}
